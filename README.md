@@ -67,7 +67,7 @@ a5 = a4.with(octave: 5)
 
 With the `Chord` record, we've used a higher order custom type,
 `ADT::Types::Array`. These are easy to define, making the "runtime type system"
-very expressive. A handful of utility types come with ruby-adt, defined in the
+very expressive. A handful of utility types come with the library, defined in the
 `ADT::Types` namespace.
 
 A custom type is an object that response to `===`, which should return `true` if
