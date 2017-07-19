@@ -5,6 +5,19 @@ in Ruby.
 
 ## Installation
 
+In your Gemfile, add:
+
+```ruby
+gem 'lib-adt', git: 'https://github.com/faber/lib-adt.git'
+```
+
+Then in your code
+
+```ruby
+require 'adt'
+```
+
+
 ## Usage
 
 ### Structs and Sum Types
