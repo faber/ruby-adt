@@ -14,7 +14,7 @@ multiple struct types.
 
 Consider the following definitions:
 
-```
+```ruby
 Pitch = ADT.sum 'Pitch' do |b|
   b.data :A
   b.data :B
@@ -43,7 +43,7 @@ octave, each of which will be type-checked at initialization. All structs are
 completely immutable. You can perform a simple "record update" constructor to
 create new instances from existing ones:
 
-```
+```ruby
 a4 = Note.new(pitch: Pitch.A, octave: 4)
 b4 = a4.with(pitch: Pitch.B)
 a5 = a4.with(octave: 5)
@@ -61,7 +61,7 @@ A custom type is an object that response to `===`, which should return `true` if
 the argument is of the object's type. It can optionally also respond to `name`
 with a prettified representation of itself. Here are some examples:
 
-```
+```ruby
 # A type representing a single value
 
 class Literal
@@ -126,7 +126,7 @@ How do we reconcile this purity with this convenience?
 ADT lets you define functions of the data, which are then made accessible on all
 the data objects.
 
-```
+```ruby
 NameType = ADT.record('Name', first: String, last: String) do
   # @param name [NameType]
   def full_name(name)
@@ -153,7 +153,7 @@ instance method but a pure function.
 Functions can also be defined on sum types but the declaration is a little bit
 different:
 
-```
+```ruby
 Cardinality = ADT.sum do |b|
   b.data(:One)
   b.data(:Many)
